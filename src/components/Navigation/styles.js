@@ -5,16 +5,10 @@ import { breakpoints } from '../../utils/styles'
 
 export const Wrapper = styled.div`
   background: rebeccapurple;
-  margin-bottom: 1.45rem;
 `
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 1.45rem;
-  margin: 0 auto;
-  max-width: 960px;
+
 `
 
 export const MenuLink = styled(Link)`

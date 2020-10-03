@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
 import { CartCounter, Container, MenuLink, Wrapper } from './styles'
+import { Link } from "gatsby"
 
 const useQuantity = () => {
   const {
@@ -18,15 +19,13 @@ const Navigation = ({ siteTitle }) => {
   const [hasItems, quantity] = useQuantity()
 
   return (
-    <Wrapper>
-      <Container>
-        <MenuLink to="/">{siteTitle}</MenuLink>
-        <MenuLink to="/cart">
-          {hasItems && <CartCounter>{quantity}</CartCounter>}
-          Cart 🛍
-        </MenuLink>
-      </Container>
-    </Wrapper>
+    <div className='bg-gray-200 p-4 rounded-lg max-w-2xl mx-auto'>
+      <div className="flex">
+        <Link className="w-full pr-4" to="/">{siteTitle}</Link>
+        <Link className="text-grey" to="/cart">Cart<CartCounter>{quantity}</CartCounter></Link>
+      </div>
+    </div>
+
   )
 }
 

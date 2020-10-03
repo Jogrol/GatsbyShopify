@@ -30,9 +30,13 @@ export const Img = styled(Image)`
 
 `
 
-export const Container = styled.div`
+export const Container = () => {
+  return <div className='w-screen h-screen bg-gray-300'>
+    <h1>Container</h1>
+  </div>
+}
 
-`
+
 
 export const TwoColumnGrid = styled.div`
 
