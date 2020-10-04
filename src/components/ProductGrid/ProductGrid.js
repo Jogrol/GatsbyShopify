@@ -48,7 +48,7 @@ const ProductGrid = () => {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <Grid>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
       {allShopifyProduct.edges ? (
         allShopifyProduct.edges.map(
           ({
@@ -60,24 +60,24 @@ const ProductGrid = () => {
               variants: [firstVariant],
             },
           }) => (
-            <Product key={id}>
-              <Link to={`/product/${handle}/`}>
-                {firstImage && firstImage.localFile && (
-                  <Img
-                    fluid={firstImage.localFile.childImageSharp.fluid}
-                    alt={handle}
-                  />
-                )}
-              </Link>
-              <Title>{title}</Title>
-              <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
-            </Product>
-          )
+              <div key={id}>
+                <Link to={`/product/${handle}/`}>
+                  {firstImage && firstImage.localFile && (
+                    <Img
+                      fluid={firstImage.localFile.childImageSharp.fluid}
+                      alt={handle}
+                    />
+                  )}
+                </Link>
+                <Title>{title}</Title>
+                <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
+              </div>
+            )
         )
       ) : (
-        <p>No Products found!</p>
-      )}
-    </Grid>
+          <p>No Products found!</p>
+        )}
+    </div>
   )
 }
 
