@@ -20,8 +20,8 @@ const Navigation = ({ siteTitle }) => {
 
   return (
 
-    <div className='bg-gray-200 p-4 rounded-lg max-w-2xl mx-auto'>
-      <div className="flex">
+    <div className='sticky top-0 z-50 flex justify-center'>
+      <div className="flex container  bg-gray-200 p-4 rounded-lg">
         <Link className="w-full pr-4" to="/">{siteTitle}</Link>
         <Link className="text-grey" to="/cart">Cart<CartCounter>{quantity}</CartCounter></Link>
       </div>
