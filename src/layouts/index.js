@@ -6,6 +6,7 @@ import ContextProvider from '~/provider/ContextProvider'
 
 
 import Navigation from '~/components/Navigation/Navigation.js'
+import Footer from '../components/Footer.js'
 
 
 const Layout = ({ children }) => {
@@ -26,11 +27,7 @@ const Layout = ({ children }) => {
             <Navigation siteTitle={data.site.siteMetadata.title} />
 
             {children}
-            <footer>
-              © {new Date().getFullYear()}, Built with
-                {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer>
+            <Footer />
 
           </>
         )}
