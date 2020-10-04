@@ -19,6 +19,7 @@ const Navigation = ({ siteTitle }) => {
   const [hasItems, quantity] = useQuantity()
 
   return (
+
     <div className='bg-gray-200 p-4 rounded-lg max-w-2xl mx-auto'>
       <div className="flex">
         <Link className="w-full pr-4" to="/">{siteTitle}</Link>

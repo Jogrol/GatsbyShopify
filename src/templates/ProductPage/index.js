@@ -4,11 +4,7 @@ import { graphql } from 'gatsby'
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
 import {
-  Img,
-  Container,
-  TwoColumnGrid,
-  GridLeft,
-  GridRight,
+  Img
 } from '~/utils/styles'
 import { ProductTitle, ProductDescription } from './styles'
 
@@ -17,26 +13,21 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <Container>
-        <TwoColumnGrid>
-          <GridLeft>
-            {product.images.map(image => (
-              <Img
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
-                alt={product.title}
-              />
-            ))}
-          </GridLeft>
-          <GridRight>
-            <ProductTitle>{product.title}</ProductTitle>
-            <ProductDescription
-              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-            />
-            <ProductForm product={product} />
-          </GridRight>
-        </TwoColumnGrid>
-      </Container>
+      <article className="container grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <div className="flex flex-wrap flex-col justify-center p-8">
+          <h1 className="text-5xl mb-4 leading-none">{product.title}</h1>
+          <div className="" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}>
+          </div>
+          <ProductForm product={product} />
+        </div>
+        {product.images.map(image => (
+          <Img
+            fluid={image.localFile.childImageSharp.fluid}
+            key={image.id}
+            alt={product.title}
+          />
+        ))}
+      </article>
     </>
   )
 }
