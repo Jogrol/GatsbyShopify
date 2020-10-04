@@ -1,13 +1,12 @@
 import React from 'react'
-
 import Cart from '~/components/Cart'
-import { Container } from '~/utils/styles'
+
 
 const CartPage = () => (
-  <Container>
-    <h1>Cart</h1>
+  <div className="container">
+    <h1 className="text-5xl">Betalen!</h1>
     <Cart />
-  </Container>
+  </div>
 )
 
 export default CartPage

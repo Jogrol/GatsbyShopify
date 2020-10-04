@@ -13,12 +13,14 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <article className="container grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <div className="flex flex-wrap flex-col justify-center p-8">
-          <h1 className="text-5xl mb-4 leading-none">{product.title}</h1>
-          <div className="" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}>
+      <article className="container grid grid-cols-1 sm:grid-cols-2 gap-8 ">
+        <div className="flex flex-wrap flex-col justify-center p-8 ">
+          <div className="bg-gray-300 p-8">
+            <h1 className="text-5xl mb-4 leading-none">{product.title}</h1>
+            <div className="" dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}>
+            </div>
+            <ProductForm product={product} />
           </div>
-          <ProductForm product={product} />
         </div>
         {product.images.map(image => (
           <Img

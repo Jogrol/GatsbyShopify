@@ -21,8 +21,8 @@ const LineItem = props => {
 
   const selectedOptions = item.variant.selectedOptions
     ? item.variant.selectedOptions.map(
-        option => `${option.name}: ${option.value} `
-      )
+      option => `${option.name}: ${option.value} `
+    )
     : null
 
   const handleRemove = () => {
@@ -30,8 +30,7 @@ const LineItem = props => {
   }
 
   return (
-    <Wrapper>
-      {console.log(item)}
+    <div>
       <Link to={`/product/${item.variant.product.handle}/`}>
         {variantImage}
       </Link>
@@ -43,7 +42,7 @@ const LineItem = props => {
       {selectedOptions}
       {item.quantity}
       <button onClick={handleRemove}>Remove</button>
-    </Wrapper>
+    </div>
   )
 }
 

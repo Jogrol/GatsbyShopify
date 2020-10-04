@@ -17,23 +17,27 @@ const Cart = () => {
   ))
 
   return (
-    <div>
-      {lineItems}
-      <h2>Subtotal</h2>
-      <p>$ {checkout.subtotalPrice}</p>
-      <br />
-      <h2>Taxes</h2>
-      <p>$ {checkout.totalTax}</p>
-      <br />
-      <h2>Total</h2>
-      <p>$ {checkout.totalPrice}</p>
-      <br />
-      <button
-        onClick={handleCheckout}
-        disabled={checkout.lineItems.length === 0}
-      >
-        Check out
+    <div className="grid grid-cols-2">
+      <div>
+        {lineItems}
+      </div>
+      <div>
+        <h2 className="text-3xl">Subtotal</h2>
+        <p>$ {checkout.subtotalPrice}</p>
+        <br />
+        <h2>Taxes</h2>
+        <p>$ {checkout.totalTax}</p>
+        <br />
+        <h2>Total</h2>
+        <p>$ {checkout.totalPrice}</p>
+        <br />
+        <button
+          onClick={handleCheckout}
+          disabled={checkout.lineItems.length === 0}
+        >
+          Check out
       </button>
+      </div>
     </div>
   )
 }
