@@ -6,7 +6,6 @@ module.exports = {
   purge: [],
   theme: {
     container: {
-      padding: '2rem',
       center: true,
     },
     extend: {},

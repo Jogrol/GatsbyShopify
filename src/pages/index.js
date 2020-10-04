@@ -10,7 +10,10 @@ const IndexPage = () => (
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Banner />
     <ProductGrid />
-    <Link to="/page-2/">Go to page 2</Link>
+    <div className="container text-center">
+      <Link to="/page-2/">Go to page 2</Link>
+    </div>
+
   </>
 )
 

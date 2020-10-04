@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import ContextProvider from '~/provider/ContextProvider'
 
 
-import Navigation from '~/components/Navigation'
+import Navigation from '~/components/Navigation/Navigation.js'
 
 
 const Layout = ({ children }) => {

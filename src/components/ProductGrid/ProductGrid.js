@@ -48,36 +48,39 @@ const ProductGrid = () => {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-8 container">
-      {allShopifyProduct.edges ? (
-        allShopifyProduct.edges.map(
-          ({
-            node: {
-              id,
-              handle,
-              title,
-              images: [firstImage],
-              variants: [firstVariant],
-            },
-          }) => (
-              < div key={id} >
-                <Link to={`/product/${handle}/`}>
-                  {firstImage && firstImage.localFile && (
-                    <Img
-                      fluid={firstImage.localFile.childImageSharp.fluid}
-                      alt={handle}
-                    />
-                  )}
-                </Link>
-                <Title>{title}</Title>
-                <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
-              </div>
-            )
-        )
-      ) : (
-          <p>No Products found!</p>
-        )}
-    </div >
+    <div className="container">
+      <h2 className="text-4xl">Product gridje</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-8 ">
+        {allShopifyProduct.edges ? (
+          allShopifyProduct.edges.map(
+            ({
+              node: {
+                id,
+                handle,
+                title,
+                images: [firstImage],
+                variants: [firstVariant],
+              },
+            }) => (
+                < div key={id} >
+                  <Link to={`/product/${handle}/`}>
+                    {firstImage && firstImage.localFile && (
+                      <Img
+                        fluid={firstImage.localFile.childImageSharp.fluid}
+                        alt={handle}
+                      />
+                    )}
+                  </Link>
+                  <Title>{title}</Title>
+                  <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
+                </div>
+              )
+          )
+        ) : (
+            <p>No Products found!</p>
+          )}
+      </div >
+    </div>
   )
 }
 
